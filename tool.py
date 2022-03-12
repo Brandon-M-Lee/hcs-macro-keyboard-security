@@ -54,7 +54,6 @@ class Student:
         tag_name.click()
         pyperclip.copy(self.name)
         tag_name.send_keys(Keys.CONTROL, 'v')
-        time.sleep(1)
 
     def input_birthday(self, driver):
         tag_birthday = driver.find_element(By.ID, 'birthday_input')
@@ -62,7 +61,6 @@ class Student:
         tag_birthday.click()
         pyperclip.copy(self.birth)
         tag_birthday.send_keys(Keys.CONTROL, 'v')
-        time.sleep(1)
     
     def open_pw_keyboard(self, driver):
         driver.find_element(By.ID, 'btnConfirm').click()
@@ -78,14 +76,30 @@ class Student:
         pw_button.click()
     
     def find_me(self, driver):
-        
+        driver.find_element(By.ID, 'btnConfirm').click()
+        time.sleep(1)
+        people = driver.find_elements(By.CLASS_NAME, 'survey-button')
+        me = people[0]
+        me.click()
+        time.sleep(1)
+    
+    def do_survey(self, driver):
+        driver.find_element(By.ID, 'survey_q1a1').click()
+        driver.find_element(By.ID, 'survey_q2a3').click()
+        driver.find_element(By.ID, 'survey_q3a1').click()
+        driver.find_element(By.ID, 'btnConfirm').click()
 
     def hcs(self):
         driver = make_driver()
         self.start(driver)
         self.choose_school(driver)
-        self.input_birthday(driver)
         self.input_name(driver)
+        self.input_birthday(driver)
         self.open_pw_keyboard(driver)
         for num in str(self.pw):
             self.click_password(driver, num)
+        self.find_me(driver)
+        self.do_survey(driver)
+
+if __name__ == '__main__':
+    me = Student('이민재', '040626', '0626')
