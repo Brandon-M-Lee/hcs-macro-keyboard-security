@@ -25,6 +25,7 @@ def job():
             do_hcs(name, birth, pw)
     except:
         pass
+    
 schedule.every().monday.at("08:00").do(job)
 schedule.every().tuesday.at("08:00").do(job)
 schedule.every().wednesday.at("08:00").do(job)
