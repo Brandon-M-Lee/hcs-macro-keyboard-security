@@ -12,7 +12,7 @@ def do_hcs(name, birth, pw):
         print(f'{student.name} 오류 발생')
 
 def job():
-    students = pd.read_csv('students.csv')
+    students = pd.read_csv('students.csv', encoding='cp949')
     try:
         for i in students.loc:
             name = i['name']
@@ -33,6 +33,7 @@ schedule.every().thursday.at("08:00").do(job)
 schedule.every().friday.at("08:00").do(job)
 
 if __name__ == '__main__':
+    job()
     while True:
         schedule.run_pending()
         time.sleep(1)
