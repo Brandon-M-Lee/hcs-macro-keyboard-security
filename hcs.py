@@ -33,7 +33,6 @@ schedule.every().thursday.at("08:00").do(job)
 schedule.every().friday.at("08:00").do(job)
 
 if __name__ == '__main__':
-    job()
     while True:
         schedule.run_pending()
         time.sleep(1)
