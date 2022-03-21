@@ -90,6 +90,7 @@ class Student:
         driver.find_element(By.ID, 'survey_q2a3').click()
         driver.find_element(By.ID, 'survey_q3a1').click()
         driver.find_element(By.ID, 'btnConfirm').click()
+        time.sleep(1)
 
     def hcs(self):
         driver = make_driver()
