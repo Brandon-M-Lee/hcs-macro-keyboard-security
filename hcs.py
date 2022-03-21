@@ -33,11 +33,11 @@ def job():
         do_hcs(person['name'], person['birth'], person['pw'])
     print(error_list)
     
-schedule.every().monday.at("08:00").do(job)
-schedule.every().tuesday.at("08:00").do(job)
-schedule.every().wednesday.at("08:00").do(job)
-schedule.every().thursday.at("08:00").do(job)
-schedule.every().friday.at("08:00").do(job)
+schedule.every().monday.at("07:30").do(job)
+schedule.every().tuesday.at("07:30").do(job)
+schedule.every().wednesday.at("07:30").do(job)
+schedule.every().thursday.at("07:30").do(job)
+schedule.every().friday.at("07:30").do(job)
 
 if __name__ == '__main__':
     while True:
