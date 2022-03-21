@@ -67,7 +67,7 @@ class Student:
     def open_pw_keyboard(self, driver):
         driver.find_element(By.ID, 'btnConfirm').click()
         time.sleep(1)
-        driver.find_element(By.CLASS_NAME, 'keyboard-icon').click()
+        driver.find_element(By.XPATH, '//*[@id="WriteInfoForm"]/table/tbody/tr/td/div/button')
         time.sleep(1)
     
     def click_password(self, driver, num):
