@@ -47,6 +47,7 @@ class Student:
         pyperclip.copy('경남과학고등학교')
         schul_name_input.send_keys(Keys.CONTROL, 'v')
         gui.press('enter')
+        time.sleep(0.3)
         gui.press(['tab', 'tab', 'enter', 'tab', 'enter'])
         time.sleep(1)
     
@@ -76,6 +77,7 @@ class Student:
             if btn.get_attribute('aria-label') == str(num):
                 pw_button = btn
         pw_button.click()
+            
     
     def find_me(self, driver):
         driver.find_element(By.ID, 'btnConfirm').click()
