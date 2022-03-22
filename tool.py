@@ -47,6 +47,7 @@ class Student:
         pyperclip.copy('경남과학고등학교')
         schul_name_input.send_keys(Keys.CONTROL, 'v')
         gui.press('enter')
+        time.sleep(0.3)
         gui.press(['tab', 'tab', 'enter', 'tab', 'enter'])
         time.sleep(1)
     
@@ -67,7 +68,8 @@ class Student:
     def open_pw_keyboard(self, driver):
         driver.find_element(By.ID, 'btnConfirm').click()
         time.sleep(1)
-        driver.find_element(By.CLASS_NAME, 'keyboard-icon').click()
+        flex_unit = driver.find_element(By.CLASS_NAME, 'flexUnit')
+        flex_unit.find_element(By.CLASS_NAME, 'keyboard-icon').click()
         time.sleep(1)
     
     def click_password(self, driver, num):
