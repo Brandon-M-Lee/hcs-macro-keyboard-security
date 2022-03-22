@@ -78,6 +78,7 @@ class Student:
             if btn.get_attribute('aria-label') == str(num):
                 pw_button = btn
         pw_button.click()
+            
     
     def find_me(self, driver):
         driver.find_element(By.ID, 'btnConfirm').click()
